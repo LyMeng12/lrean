@@ -78,37 +78,97 @@ public class Main {
         System.out.println("if your point 20 me 22 me win.");
         System.out.print("You can start new(Y/N):");
         String play = in.next().toLowerCase();
+//        int usersum;
+//        int adminsum;
         while (play.equals("y")){
             System.out.println("Admin:");
-            int card1admin = (int)(Math.random() * 10) + 1;
-            int card2admin = (int)(Math.random() * 10) + 1;
-            System.out.println(card1admin + " + " + card2admin + " = " + (card1admin + card2admin));
+            int card1admin = (int)(Math.random() * 14) + 1;
+            int card2admin = (int)(Math.random() * 14) + 1;
+            System.out.println("?" + " + " + "?" + " = " + "?");
 
 
 
 
             System.out.println("Me:");
-            int card1user = (int)(Math.random() * 10) + 1;
-            int card2user = (int)(Math.random() * 10) + 1;
+            int card1user = (int)(Math.random() * 14) + 1;
+            int card2user = (int)(Math.random() * 14) + 1;
             System.out.println(card1user + " + " + card2user + " = " + (card1user + card2user));
-            System.out.print("You need 1 more?:");
-            String user = in.next().toLowerCase();
-            if(user.equals("y")){
-                System.out.println("Admin:");
-                int adminsum = card1admin + card2admin;
-                System.out.println(card1admin + " + " + card2admin + " = " + adminsum);
 
-
-
-
-                System.out.println("Me:");
-
-                int card3user = (int)(Math.random() * 10) + 1;
-                int usersum = card1user + card2user + card3user;
-                System.out.println(card1user + " + " + card2user + " + " + card3user + " = " + usersum);
-
+            if((card1user + card2user) > 22 ){
+                System.out.println("You are Lose!");
+                break;
             }
-            if()
+
+            if((card1admin + card2admin) > 22 ){
+                System.out.println("You are win!");
+                break;
+            }
+
+            System.out.print("You need 1 more?(y/n):");
+            String user = in.next().toLowerCase();
+
+
+
+
+            while (user.equals("n")){
+                if((card1admin + card2admin) > (card1user + card2user)){
+                    System.out.println("Admin:");
+                    System.out.println(card1admin + " + " + card2admin + " = " + (card1admin+card2admin));
+
+
+
+
+                    System.out.println("Me:");
+                    System.out.println(card1user + " + " + card2user + " = " + (card1user + card2user));
+                    System.out.println("You are Lose!");
+                    break;
+                }
+                while ((card1user + card2user) > (card1admin + card2admin)){
+                    System.out.println("Admin:");
+                    int card3admin = (int)(Math.random() * 14)+1;
+                    System.out.println(card1admin + " + " + card2admin +" + " + card3admin + " = " + (card1admin+card3admin+card2admin));
+
+
+
+
+                    System.out.println("Me:");
+                    System.out.println(card1user + " + " + card2user + " = " + (card1user + card2user));
+
+
+                    if((card1admin+card3admin+card2admin)>22){
+                        System.out.println("You are win!");
+                        break;
+                    }
+                    if((card1admin+card3admin+card2admin)<(card1user + card2user)){
+                        System.out.println("You are Win!");
+                        break;
+                    }
+                    if((card1admin+card3admin+card2admin)>(card1user + card2user)){
+                        System.out.println("You are Lose!");
+                        break;
+                    }
+                    if((card1admin+card3admin+card2admin)==(card1user + card2user)){
+                        System.out.println("We are ==");
+                        break;
+                    }
+
+
+                }break;
+
+//                if((card1user + card2user) > (card1admin+card2admin) ){
+//                    System.out.println("Admin:");
+//                    System.out.println(card1admin + " + " + card2admin + " = " + (card1admin+card2admin));
+//
+//
+//
+//
+//                    System.out.println("Me:");
+//                    System.out.println(card1user + " + " + card2user + " = " + (card1user + card2user));
+//                    System.out.println("You are win!");
+//                    break;
+//                }
+            }
+
             System.out.print("Play card again !(y/n):");
             play = in.next().toLowerCase();
             if (play.equals("y")){
@@ -116,6 +176,9 @@ public class Main {
             }else if (play.equals("n")){
                 play = "n";
             }
+
+
+
         }
 
     }
