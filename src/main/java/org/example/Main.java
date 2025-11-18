@@ -70,145 +70,151 @@ public class Main {
             }
         }
     }
+
     public static void game2(){
         Scanner in = new Scanner(System.in);
+        String user;
         System.out.println("This is game 2.");
         System.out.println("You Play card whit me.");
         System.out.println("full Point 22 u have 2 and 3 card.");
         System.out.println("if your point 20 me 22 me win.");
         System.out.print("You can start new(Y/N):");
         String play = in.next().toLowerCase();
-//        int usersum;
-//        int adminsum;
+
         while (play.equals("y")){
-            System.out.println("Admin:");
-            int card1admin = (int)(Math.random() * 14) + 1;
-            int card2admin = (int)(Math.random() * 14) + 1;
-            System.out.println("?" + " + " + "?" + " = " + "?");
-
-
-
-
-            System.out.println("Me:");
-            int card1user = (int)(Math.random() * 14) + 1;
-            int card2user = (int)(Math.random() * 14) + 1;
-            System.out.println(card1user + " + " + card2user + " = " + (card1user + card2user));
-
-            if((card1user + card2user) > 22 ){
-                System.out.println("You are Lose!");
-                break;
-            }
-
-            if((card1admin + card2admin) > 22 ){
-                System.out.println("You are win!");
-                break;
-            }
-
-            System.out.print("You need 1 more?(y/n):");
-            String user = in.next().toLowerCase();
-
-            while (user.equals("y")){
+            while (play.equals("y")){
                 System.out.println("Admin:");
-                System.out.println(card1admin + " + " + card2admin + " = " + (card1admin + card2admin ));
+                int card1admin = (int)(Math.random() * 14) + 1;
+                int card2admin = (int)(Math.random() * 14) + 1;
+                System.out.println("?" + " + " + "?" + " = " + "?");
 
 
 
 
                 System.out.println("Me:");
-                int card3user = (int)(Math.random() * 14)+1;
-                System.out.println(card1user + " + " + card2user+ " + " + card3user + " = " + (card1user + card2user + card3user));
+                int card1user = (int)(Math.random() * 14) + 1;
+                int card2user = (int)(Math.random() * 14) + 1;
+                System.out.println(card1user + " + " + card2user + " = " + (card1user + card2user));
 
-                if ((card1user + card2user + card3user)>22){
+                if ((card1user + card2user) > 22 ){
                     System.out.println("You are Lose!");
                     break;
                 }
 
-                if((card1user + card2user + card3user) == (card1admin + card2admin )){
-                    System.out.println("You are Lose!");
+                if ((card1admin + card2admin) > 22 ){
+                    System.out.println("You are win!");
                     break;
                 }
 
-                if ((card1user + card2user + card3user)<(card1admin + card2admin )){
-                    System.out.println("You are Lose!");
-                    break;
-                }
 
-                while ((card1user + card2user + card3user)>(card1admin + card2admin )){
+                System.out.print("You need 1 more?(y/n):");
+                user = in.next().toLowerCase();
+                while (user.equals("y")){
                     System.out.println("Admin:");
-                    int card3admin = (int)(Math.random()*14)+1;
-                    System.out.println(card1admin + " + " + card2admin+ " + " + card3admin + " = " + (card3admin +card1admin + card2admin ));
+                    System.out.println(card1admin + " + " + card2admin + " = " + (card1admin + card2admin ));
+
+
+
 
                     System.out.println("Me:");
-                    System.out.println(card1user + " + " + card2user + " + " + card3user + " = " + (card1user + card2user+ card3user ));
+                    int card3user = (int)(Math.random() * 14)+1;
+                    System.out.println(card1user + " + " + card2user+ " + " + card3user + " = " + (card1user + card2user + card3user));
 
-                    if((card1admin + card2admin+ card3admin )>22){
-                        System.out.println("You are Win!");
-                        break;
-                    }
-
-                    if((card3admin +card1admin + card2admin ) == (card1user + card2user + card3user)){
-                        System.out.println("We are ==!");
-                        break;
-                    }
-
-                    if((card3admin +card1admin + card2admin ) > (card1user + card2user + card3user)){
+                    while ((card1user + card2user + card3user)>22){
                         System.out.println("You are Lose!");
                         break;
                     }
-                    if((card3admin +card1admin + card2admin ) < (card1user + card2user + card3user)){
-                        System.out.println("You are win!");
-                        break;
-                    }
-                    break;
-                }
-                break;
 
-            }
-
-            while (user.equals("n")){
-                if((card1admin + card2admin) > (card1user + card2user)){
-                    System.out.println("Admin:");
-                    System.out.println(card1admin + " + " + card2admin + " = " + (card1admin+card2admin));
-
-
-
-
-                    System.out.println("Me:");
-                    System.out.println(card1user + " + " + card2user + " = " + (card1user + card2user));
-                    System.out.println("You are Lose!");
-                    break;
-                }
-                while ((card1user + card2user) > (card1admin + card2admin)){
-                    System.out.println("Admin:");
-                    int card3admin = (int)(Math.random() * 14)+1;
-                    System.out.println(card1admin + " + " + card2admin +" + " + card3admin + " = " + (card1admin+card3admin+card2admin));
-
-
-
-
-                    System.out.println("Me:");
-                    System.out.println(card1user + " + " + card2user + " = " + (card1user + card2user));
-
-
-                    if((card1admin+card3admin+card2admin)>22){
-                        System.out.println("You are win!");
-                        break;
-                    }
-                    if((card1admin+card3admin+card2admin)<(card1user + card2user)){
-                        System.out.println("You are Win!");
-                        break;
-                    }
-                    if((card1admin+card3admin+card2admin)>(card1user + card2user)){
+                    while ((card1user + card2user + card3user) == (card1admin + card2admin )){
                         System.out.println("You are Lose!");
                         break;
                     }
-                    if((card1admin+card3admin+card2admin)==(card1user + card2user)){
-                        System.out.println("We are ==");
+
+                    while ((card1user + card2user + card3user)<(card1admin + card2admin )){
+                        System.out.println("You are Lose!");
                         break;
                     }
 
+                    while ((card1user + card2user + card3user)>(card1admin + card2admin )){
+                        System.out.println("Admin:");
+                        int card3admin = (int)(Math.random()*14)+1;
+                        System.out.println(card1admin + " + " + card2admin+ " + " + card3admin + " = " + (card3admin +card1admin + card2admin ));
 
-                }break;
+                        System.out.println("Me:");
+                        System.out.println(card1user + " + " + card2user + " + " + card3user + " = " + (card1user + card2user+ card3user ));
+
+                        if((card1admin + card2admin+ card3admin )>22){
+                            System.out.println("You are Win!");
+                            break;
+                        }
+                        if((card1user + card2user + card3user)>22){
+                            System.out.println("You are Win!");
+                            break;
+                        }
+
+                        if((card3admin +card1admin + card2admin ) == (card1user + card2user + card3user)){
+                            System.out.println("We are ==!");
+                            break;
+                        }
+
+                        if((card3admin +card1admin + card2admin ) > (card1user + card2user + card3user)){
+                            System.out.println("You are Lose!");
+                            break;
+                        }
+                        if((card3admin +card1admin + card2admin ) < (card1user + card2user + card3user)){
+                            System.out.println("You are win!");
+                            break;
+                        }
+                        break;
+                    }
+                    break;
+
+                }
+
+                while (user.equals("n")){
+                    if((card1admin + card2admin) > (card1user + card2user)){
+                        System.out.println("Admin:");
+                        System.out.println(card1admin + " + " + card2admin + " = " + (card1admin+card2admin));
+
+
+
+
+                        System.out.println("Me:");
+                        System.out.println(card1user + " + " + card2user + " = " + (card1user + card2user));
+                        System.out.println("You are Lose!");
+                        break;
+                    }
+                    while ((card1user + card2user) > (card1admin + card2admin)){
+                        System.out.println("Admin:");
+                        int card3admin = (int)(Math.random() * 14)+1;
+                        System.out.println(card1admin + " + " + card2admin +" + " + card3admin + " = " + (card1admin+card3admin+card2admin));
+
+
+
+
+                        System.out.println("Me:");
+                        System.out.println(card1user + " + " + card2user + " = " + (card1user + card2user));
+
+
+                        if((card1admin+card3admin+card2admin)>22){
+                            System.out.println("You are win!");
+                            break;
+                        }
+                        if((card1admin+card3admin+card2admin)<(card1user + card2user)){
+                            System.out.println("You are Win!");
+                            break;
+                        }
+                        if((card1admin+card3admin+card2admin)>(card1user + card2user)){
+                            System.out.println("You are Lose!");
+                            break;
+                        }
+                        if((card1admin+card3admin+card2admin)==(card1user + card2user)){
+                            System.out.println("We are ==");
+                            break;
+                        }
+
+
+                    }break;
 
 //                if((card1user + card2user) > (card1admin+card2admin) ){
 //                    System.out.println("Admin:");
@@ -222,14 +228,21 @@ public class Main {
 //                    System.out.println("You are win!");
 //                    break;
 //                }
+                }
             }
 
+
+
+
+
             System.out.print("Play card again !(y/n):");
-            play = in.next().toLowerCase();
-            if (play.equals("y")){
-                play = "y";
+            String plays = in.next().toLowerCase();
+
+            if (plays.equals("y")){
+                plays = "y";
             }else if (play.equals("n")){
-                play = "n";
+                plays = "n";
+                break;
             }
 
 

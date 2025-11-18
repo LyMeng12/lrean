@@ -6,12 +6,6 @@ import java.util.Scanner;
 
 public class Methods {
 
-    static double interestYEAR(double money){
-
-        return (money * 10)/100;
-    }
-
-
     static void Moth(double money){
         Scanner in = new Scanner(System.in);
 
@@ -37,6 +31,20 @@ public class Methods {
         Scanner in = new Scanner(System.in);
         double moth;
         if(yorm.equals("year")){
+            System.out.print("How many year:");
+            double timemoth = in.nextDouble();
+            moth = timemoth;
+            double Interest;
+            double time;
+
+            double amount;
+            Interest =(money * 15)/100;
+            amount = Interest+money;
+            time = amount / moth;
+            System.out.println("=========================================");
+            System.out.println("times interest money/1yaer:"+Math.round(time) +"$");
+            System.out.println("Total Interest:" + Interest + "$" );
+            System.out.println("Tota Amount: "+amount + "$");
 
         }else if(yorm.equals("moth")){
             System.out.print("How many year:");
@@ -53,8 +61,6 @@ public class Methods {
             System.out.println("times interest money/1moth:"+Math.round(time) +"$");
             System.out.println("Total Interest:" + Interest + "$" );
             System.out.println("Tota Amount: "+amount + "$");
-
-
         }
 
     }
