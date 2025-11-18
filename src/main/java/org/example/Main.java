@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
+
         String again;
 
 
@@ -82,7 +83,9 @@ public class Main {
         String play = in.next().toLowerCase();
 
         while (play.equals("y")){
-            while (play.equals("y")){
+            String plays = "y";
+            while (plays.equals("y")){
+                System.out.println("==========================================");
                 System.out.println("Admin:");
                 int card1admin = (int)(Math.random() * 14) + 1;
                 int card2admin = (int)(Math.random() * 14) + 1;
@@ -120,17 +123,17 @@ public class Main {
                     int card3user = (int)(Math.random() * 14)+1;
                     System.out.println(card1user + " + " + card2user+ " + " + card3user + " = " + (card1user + card2user + card3user));
 
-                    while ((card1user + card2user + card3user)>22){
+                    if ((card1user + card2user + card3user)>22){
                         System.out.println("You are Lose!");
                         break;
                     }
 
-                    while ((card1user + card2user + card3user) == (card1admin + card2admin )){
+                    if ((card1user + card2user + card3user) == (card1admin + card2admin )){
                         System.out.println("You are Lose!");
                         break;
                     }
 
-                    while ((card1user + card2user + card3user)<(card1admin + card2admin )){
+                    if ((card1user + card2user + card3user)<(card1admin + card2admin )){
                         System.out.println("You are Lose!");
                         break;
                     }
@@ -229,6 +232,7 @@ public class Main {
 //                    break;
 //                }
                 }
+                break;
             }
 
 
@@ -236,15 +240,14 @@ public class Main {
 
 
             System.out.print("Play card again !(y/n):");
-            String plays = in.next().toLowerCase();
-
-            if (plays.equals("y")){
-                plays = "y";
-            }else if (play.equals("n")){
-                plays = "n";
+            plays = in.next().toLowerCase();
+            while (!plays.equals("y") && !plays.equals("n")){
+                System.out.print("Play card again !(y/n):");
+                plays = in.next().toLowerCase();
+            }
+            if (plays.equals("n")){
                 break;
             }
-
 
 
         }
