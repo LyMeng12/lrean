@@ -65,7 +65,7 @@ public class Oop {
                 System.out.print(b[i][j]);
             }
             System.out.println();
-        }
+        };
 
 
 
